@@ -34,17 +34,31 @@
 
 
 - (IBAction)cardButtonTapped:(UIButton *)sender {
-	if ([sender.currentTitle length]) {
-		[sender setTitle:@""
-				forState:UIControlStateNormal];
-		[sender setBackgroundImage:[UIImage imageNamed:@"cardback"]
-						  forState:UIControlStateNormal];
-	} else {
-		Card *card = [self.deck drawRandomCard];
-		[sender setTitle:card.contents
-				forState:UIControlStateNormal];
-		[sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
-						  forState:UIControlStateNormal];
+    ViewController *myView = [[ViewController alloc] init];
+    
+    if (myView.deck.cards) {
+        if ([sender.currentTitle length]) {
+            [sender setTitle:@""
+                    forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardback"]
+                              forState:UIControlStateNormal];
+        } else {
+ //           Card *card = [self.deck drawRandomCard];
+            PlayingCard *card = [self.deck drawRandomCard];
+            [sender setTitle:card.contents
+                    forState:UIControlStateNormal];
+            [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
+                              forState:UIControlStateNormal];
+            if ([card.suit rangeOfString:@"♦"].location != NSNotFound
+                || [card.suit rangeOfString:@"♥"].location != NSNotFound) {
+                [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            } else if ([card.suit rangeOfString:@"♣"].location != NSNotFound
+                || [card.suit rangeOfString:@"♠"].location != NSNotFound) {
+                [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            } else {
+                [sender setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+            }
+        }
 	}
 }
 
