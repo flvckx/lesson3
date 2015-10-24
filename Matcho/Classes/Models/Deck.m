@@ -40,7 +40,13 @@
 
 - (Card *)drawRandomCard {
 	NSInteger randomCard = arc4random() % [self.cards count];
-	return self.cards[randomCard];
+    if (self.cards) {
+        for (PlayingCard* card in self.cards) {
+            if ([card.contents isEqualToString:self.cards[randomCard]]) {
+                [self.cards removeObject:card];
+            }
+        }
+    }
+        return self.cards[randomCard];
 }
-
 @end
