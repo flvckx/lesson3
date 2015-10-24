@@ -24,7 +24,12 @@
 	if (!_deck) {
 		_deck = [[PlayingCardDeck alloc] init];
 	}
-	return _deck;
+    Card *completeMatchingCard = [_deck.cards firstObject];
+    [_deck addCard:completeMatchingCard];
+    Card *variantCard = [[Card alloc] init];
+    variantCard.contents = @"Joker";
+    [_deck addCard:variantCard];
+    return _deck;
 }
 
 
