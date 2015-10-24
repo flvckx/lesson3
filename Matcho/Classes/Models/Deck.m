@@ -49,7 +49,6 @@
     }
     else
         return nil;
-    
     return self.cards[randomCard];
 }
 @end
