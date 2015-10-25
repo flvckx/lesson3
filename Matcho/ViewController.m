@@ -32,9 +32,13 @@
     return _deck;
 }
 
+    int i = 0;
 
 - (IBAction)cardButtonTapped:(UIButton *)sender {
     ViewController *myView = [[ViewController alloc] init];
+    i++;
+    
+    [myLabel setText:[NSString stringWithFormat:@"%i", i]];
     
     if (myView.deck.cards) {
         if ([sender.currentTitle length]) {

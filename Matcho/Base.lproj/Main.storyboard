@@ -28,6 +28,13 @@
                                     <action selector="cardFlipped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZmZ-Am-Uk9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpP-V4-lE5">
+                                <rect key="frame" x="121" y="574" width="132" height="50"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" red="0.46695631380000002" green="0.12406429839999999" blue="0.19997805090000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -39,10 +46,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cardButton" destination="Emo-9d-CLG" id="9fV-ka-Avt"/>
+                        <outlet property="myLabel" destination="wpP-V4-lE5" id="73S-gD-Li7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="304.5" y="357.5"/>
         </scene>
     </scenes>
     <resources>
