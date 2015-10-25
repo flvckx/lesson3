@@ -62,4 +62,21 @@
 	}
 }
 
+- (IBAction)cardFlipped:(UIButton *)sender {
+    if (![sender.currentTitle length]) {
+        NSLog(@"Card was flipped");
+    } else {
+        if ([[sender titleForState:UIControlStateNormal] rangeOfString:@"♦"].location != NSNotFound
+            || [[sender titleForState:UIControlStateNormal] rangeOfString:@"♥"].location != NSNotFound
+            || [[sender titleForState:UIControlStateNormal] rangeOfString:@"♣"].location != NSNotFound
+            || [[sender titleForState:UIControlStateNormal] rangeOfString:@"♠"].location != NSNotFound) {
+            NSLog(@"Drawed playing card A♠");
+        } else
+            NSLog(@"Drawed card 666");
+    }
+    if (![self.deck.cards count]) {
+        NSLog(@"Deck is Empty");
+    }
+}
+
 @end

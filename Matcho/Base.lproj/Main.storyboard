@@ -25,6 +25,7 @@
                                 </state>
                                 <connections>
                                     <action selector="cardButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0bz-7u-uBf"/>
+                                    <action selector="cardFlipped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZmZ-Am-Uk9"/>
                                 </connections>
                             </button>
                         </subviews>
