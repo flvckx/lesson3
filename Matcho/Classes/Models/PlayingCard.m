@@ -65,8 +65,10 @@
             if (self.rank == [(PlayingCard *)card rank]) {
                 i += 4;
             }
-        } else if ([self.contents isEqualToString:card.contents]) {
-            i = 10;
+        } else if ([card isMemberOfClass:[Card class]]) {
+            if ([self.contents isEqualToString:card.contents]) {
+                i += 10;
+            }
         }
     }
 	return i;

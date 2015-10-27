@@ -10,7 +10,7 @@
 
 @interface Deck()
 
-//@property (nonatomic, strong) NSMutableArray *cards;
+@property (nonatomic, strong) NSMutableArray *cards;
 
 @end
 
@@ -40,15 +40,12 @@
 
 - (Card *)drawRandomCard {
 	NSInteger randomCard = arc4random() % [self.cards count];
-    if (self.cards) {
-        for (PlayingCard *card in self.cards) {
-            if ([card.contents isEqualToString:self.cards[randomCard]]) {
-                [self.cards removeObject:card];
-            }
-        }
+    if (self.cards.count) {
+        Card *card = self.cards[randomCard];
+        [self.cards removeObject:card];
+        return card;
     }
     else
         return nil;
-    return self.cards[randomCard];
 }
 @end
